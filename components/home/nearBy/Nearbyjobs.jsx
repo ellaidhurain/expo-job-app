@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import styles from "./nearbyjobs.style";
 import { useRouter } from "expo-router";
-import useFetch from "../../../hook/useFetch";
 import { COLORS, SIZES } from "../../../constants";
 import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
 import profile from "../../../constants/images";
@@ -65,7 +64,7 @@ const Nearbyjobs = () => {
           <NearbyJobCard 
           job={job} 
           key={job?.job_id}
-          handleNavigate={()=> router.push(`job-details/${job.job_id}`)}
+          handleNavigate={()=> router.push(`job-details/${job?.job_id}`)}
           />
           ))
         )}
